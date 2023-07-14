@@ -4,34 +4,36 @@ import { Link } from "react-router-dom";
 import { Product } from "./types";
 import PRODUCTS from "./constants";
 
-import "../../index.scss";
+import "tailwindcss/tailwind.css";
 
 export default function ProductsList() {
   return (
-    <div className="mx-auto max-w-2xl sm:px-6 sm:py-24 lg:max-w-7xl lg:px-0 lg:py-4">
-      <h2 className="text-3xl font-bold tracking-tight text-gray-900 text-center mb-4">
+    <div className="pl-mx-auto pl-max-w-2xl sm:pl-px-6 sm:pl-py-24 lg:pl-max-w-7xl lg:pl-px-0 lg:pl-py-4">
+      <h2 className="pl-text-3xl pl-font-bold pl-tracking-tight pl-text-gray-900 pl-text-center pl-mb-4">
         Mais vendidos
       </h2>
 
-      <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+      <div className="pl-mt-6 pl-grid pl-grid-cols-1 pl-gap-x-6 pl-gap-y-10 sm:pl-grid-cols-2 lg:pl-grid-cols-4 xl:pl-gap-x-8">
         {PRODUCTS.map((product: Product) => (
           <Link to={`/produto/${product.id}`} key={product.id}>
-            <div className="group relative shadow-lg rounded-lg p-4">
-              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+            <div className="pl-group pl-relative pl-shadow-lg pl-rounded-lg pl-p-4">
+              <div className="pl-aspect-h-1 pl-aspect-w-1 pl-w-full overflow-hidden pl-rounded-md pl-bg-gray-200 pl-lg:aspect-none group-hover:pl-opacity-75 lg:pl-h-80">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                  className="pl-h-full pl-w-full pl-object-cover pl-object-center lg:pl-h-full lg:pl-w-full"
                 />
               </div>
-              <div className="mt-4 flex justify-between">
+              <div className="pl-mt-4 pl-flex pl-justify-between">
                 <div>
-                  <h3 className="text-sm text-gray-700">
+                  <h3 className="pl-text-sm pl-text-gray-700">
                     <span>{product.name}</span>
                   </h3>
-                  <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+                  <p className="pl-mt-1 pl-text-sm pl-text-gray-500">
+                    {product.color}
+                  </p>
                 </div>
-                <p className="text-sm font-medium text-gray-900">
+                <p className="pl-text-sm pl-font-medium pl-text-gray-900">
                   R$ {product.price}
                 </p>
               </div>

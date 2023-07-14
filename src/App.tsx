@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import ProductsList from "./components/ProductsList";
 
-import "./index.scss";
+import "./index.css";
 
 const App = () => {
   return (
