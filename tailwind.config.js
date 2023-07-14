@@ -1,12 +1,14 @@
 module.exports = {
-  content: [
-    "./src/**/*.tsx"
-  ],
+  content: ["./src/**/*.tsx"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        nunito: ["Nunito", "sans-serif"],
+      },
+    },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
-}
+  plugins: [require("@tailwindcss/aspect-ratio")],
+};

@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import ProductsList from "./components/ProductsList";
+
 import "./index.scss";
-import { ProductsList } from "./components/products-list";
 
 const App = () => {
   return <ProductsList />;
