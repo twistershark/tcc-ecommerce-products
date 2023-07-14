@@ -1,12 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
 import ProductsList from "./components/ProductsList";
 
 import "./index.scss";
 
 const App = () => {
-  return <ProductsList />;
+  return (
+    <BrowserRouter>
+      <ProductsList />
+    </BrowserRouter>
+  );
 };
 
-ReactDOM.render(<App />, document.getElementById("app"));
+const root = createRoot(document.getElementById("app")!);
+root.render(<App />);
