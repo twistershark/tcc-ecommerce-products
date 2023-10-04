@@ -1,4 +1,10 @@
-import { Product } from "./types";
+import { Product } from "../../../domain/models/product";
+
+export class MemoryLoadProducts {
+  load() {
+    return Promise.resolve(PRODUCTS);
+  }
+}
 
 const PRODUCTS: Product[] = [
   {
@@ -102,5 +108,3 @@ const PRODUCTS: Product[] = [
       "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl",
   },
 ];
-
-export default PRODUCTS;
