@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Product } from "../../../domain/models/product";
+import { Product } from "../../../domain/entities/product";
 
 interface ProductItemProps {
   product: Product;

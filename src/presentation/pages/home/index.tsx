@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Product } from "../../../domain/models/product";
 import { LoadProducts } from "../../../domain/usecases/load-products";
+import { Product } from "../../../domain/entities/product";
 import { ProductItem } from "../../components/product-item";
 
 import "tailwindcss/tailwind.css";

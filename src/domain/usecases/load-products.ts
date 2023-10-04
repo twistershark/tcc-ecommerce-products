@@ -1,4 +1,4 @@
-import { Product } from "../models/product";
+import { Product } from "../entities/product";
 
 export interface LoadProducts {
   load: () => Promise<Product[]>;

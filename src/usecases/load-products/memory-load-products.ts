@@ -1,4 +1,4 @@
-import { Product } from "../../../domain/models/product";
+import { Product } from "../../domain/entities/product";
 
 export class MemoryLoadProducts {
   load() {
