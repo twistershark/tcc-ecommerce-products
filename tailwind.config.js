@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        nunito: ["Nunito", "sans-serif"],
+        serif: ["Libre Baskerville", "serif"],
+        sans: ["Montserrat", "sans-serif"],
       },
     },
   },

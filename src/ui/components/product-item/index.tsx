@@ -9,7 +9,7 @@ interface ProductItemProps {
 export function ProductItem({ product }: ProductItemProps) {
   return (
     <Link to={`/produto/${product.id}`} key={product.id}>
-      <div className="pl-group pl-relative pl-shadow-lg pl-rounded-lg pl-p-4">
+      <div className="pl-group pl-relative pl-shadow-lg">
         <div className="pl-aspect-h-1 pl-aspect-w-1 pl-w-full overflow-hidden pl-rounded-md pl-bg-gray-200 pl-lg:aspect-none group-hover:pl-opacity-75 lg:pl-h-80">
           <img
             src={product.image}
@@ -17,16 +17,16 @@ export function ProductItem({ product }: ProductItemProps) {
             className="pl-h-full pl-w-full pl-object-cover pl-object-center lg:pl-h-full lg:pl-w-full"
           />
         </div>
-        <div className="pl-mt-4 pl-flex pl-justify-between">
-          <div>
-            <h3 className="pl-text-sm pl-text-gray-700">
-              <span>{product.name}</span>
+
+        <div className="pl-mt-4 pl-flex pl-flex-col pl-items-center pl-p-4 pl-gap-4">
+          <div className="pl-flex pl-flex-col pl-items-center">
+            <h3 className="pl-text-sm pl-text-gray-700 pl-font-sans pl-font-semibold">
+              {product.name}
             </h3>
-            <p className="pl-mt-1 pl-text-sm pl-text-gray-500">
-              {product.color}
-            </p>
+            <p className="pl-text-sm pl-text-gray-500">{product.color}</p>
           </div>
-          <p className="pl-text-sm pl-font-medium pl-text-gray-900">
+
+          <p className="pl-text-lg pl-font-medium pl-text-gray-900 pl-font-serif">
             R$ {product.price}
           </p>
         </div>

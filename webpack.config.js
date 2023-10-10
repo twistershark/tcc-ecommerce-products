@@ -38,6 +38,10 @@ module.exports = (_, argv) => ({
           loader: "babel-loader",
         },
       },
+      {
+        test: /\.png/,
+        type: "asset/resource",
+      },
     ],
   },
 
@@ -47,7 +51,7 @@ module.exports = (_, argv) => ({
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
-        "./ProductsList": "./src/main/factories/pages/home/home-factory.tsx",
+        "./ProductsRoutes": "./src/ui/router/routes",
       },
       shared: {
         ...deps,

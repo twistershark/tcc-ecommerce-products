@@ -1,8 +1,24 @@
-import { Product } from "../../domain/entities/product";
+import { Category } from "../domain/entities/category";
+import { Product } from "../domain/entities/product";
+import { ProductRepositoryInterface } from "../domain/repositories/product-repository-interface";
 
-export class MemoryLoadProducts {
-  load() {
+export class MemoryProductsRepository implements ProductRepositoryInterface {
+  async loadProducts() {
     return Promise.resolve(PRODUCTS);
+  }
+
+  async searchByName(name: string) {
+    return Promise.resolve(
+      PRODUCTS.filter((product) =>
+        product.name.toLowerCase().includes(name.toLowerCase())
+      )
+    );
+  }
+
+  async searchByCategory(category: Category) {
+    return Promise.resolve(
+      PRODUCTS.filter((product) => product.category === category)
+    );
   }
 }
 
@@ -15,6 +31,7 @@ const PRODUCTS: Product[] = [
     image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
     description:
       "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl.",
+    category: Category.PURSES,
   },
   {
     id: "2",
@@ -25,6 +42,7 @@ const PRODUCTS: Product[] = [
       "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
     description:
       "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl.",
+    category: Category.MAN,
   },
   {
     id: "3",
@@ -34,6 +52,7 @@ const PRODUCTS: Product[] = [
     image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
     description:
       "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl.",
+    category: Category.MAN,
   },
   {
     id: "4",
@@ -43,6 +62,7 @@ const PRODUCTS: Product[] = [
     image: "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
     description:
       "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl.",
+    category: Category.MAN,
   },
   {
     id: "5",
@@ -52,6 +72,7 @@ const PRODUCTS: Product[] = [
     image: "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
     description:
       "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl.",
+    category: Category.WOMAN,
   },
   {
     id: "6",
@@ -61,6 +82,7 @@ const PRODUCTS: Product[] = [
     image: "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
     description:
       "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl.",
+    category: Category.WOMAN,
   },
   {
     id: "7",
@@ -70,6 +92,7 @@ const PRODUCTS: Product[] = [
     image: "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
     description:
       "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl.",
+    category: Category.WOMAN,
   },
   {
     id: "8",
@@ -79,6 +102,7 @@ const PRODUCTS: Product[] = [
     image: "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
     description:
       "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl",
+    category: Category.MAN,
   },
   {
     id: "9",
@@ -88,6 +112,7 @@ const PRODUCTS: Product[] = [
     image: "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
     description:
       "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl",
+    category: Category.WOMAN,
   },
   {
     id: "10",
@@ -97,6 +122,7 @@ const PRODUCTS: Product[] = [
     image: "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
     description:
       "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl",
+    category: Category.WOMAN,
   },
   {
     id: "11",
@@ -106,5 +132,6 @@ const PRODUCTS: Product[] = [
     image: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
     description:
       "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl. Sed euismod, diam quis aliquet tincidunt, nisl libero ultricies diam, eu tincidunt nisl nisl nec nisl",
+    category: Category.WOMAN,
   },
 ];

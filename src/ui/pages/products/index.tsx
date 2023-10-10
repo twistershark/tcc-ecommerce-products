@@ -1,21 +1,29 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { LoadProducts } from "../../../domain/usecases/load-products";
+
 import { Product } from "../../../domain/entities/product";
 import { ProductItem } from "../../components/product-item";
+import productsController from "../../../controllers/products-controller";
+import { Category } from "../../../domain/entities/category";
 
-import "tailwindcss/tailwind.css";
-
-interface HomeProps {
-  loadProducts: LoadProducts;
-}
-
-export function Home({ loadProducts }: HomeProps) {
+export function Products() {
   const [products, setProducts] = useState([] as Product[]);
 
   async function handleLoadProducts() {
-    const loadedProducts = await loadProducts.load();
+    const loadedProducts = await productsController.loadProducts();
     setProducts(loadedProducts);
+  }
+
+  async function handleFilterByName() {
+    const filteredProducts = await productsController.searchProductsByName("");
+    setProducts(filteredProducts);
+  }
+
+  async function handleFilterByCategory() {
+    const filteredProducts = await productsController.searchProductsByCategory(
+      Category.MAN
+    );
+    setProducts(filteredProducts);
   }
 
   useEffect(() => {
