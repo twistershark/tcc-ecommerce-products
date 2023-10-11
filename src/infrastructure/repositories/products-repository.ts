@@ -9,17 +9,17 @@ export class ProductsRepository implements ProductRepositoryInterface {
     this.productAdapter = productAdapter;
   }
 
-  async loadProducts() {
+  async loadProducts(): Promise<Product[]> {
     const products = await this.productAdapter.get();
     return products;
   }
 
-  async searchByName(name: string) {
+  async searchByName(name: string): Promise<Product[]> {
     const products = await this.productAdapter.get({ name });
     return products;
   }
 
-  async searchByCategory(category: Category) {
+  async searchByCategory(category: Category): Promise<Product[]> {
     const products = await this.productAdapter.get({ category });
     return products;
   }

@@ -14,7 +14,7 @@ export class ProductService implements ProductServiceInterface {
     return products;
   }
 
-  async loadHighlightedProducts() {
+  async loadHighlightedProducts(): Promise<Product[]> {
     const products = await this.repository.loadProducts();
 
     const tempProducts = [...products];
@@ -31,13 +31,13 @@ export class ProductService implements ProductServiceInterface {
     return randomProducts;
   }
 
-  async searchByName(name: string) {
+  async searchByName(name: string): Promise<Product[]> {
     const productsResult = await this.repository.searchByName(name);
 
     return productsResult;
   }
 
-  async searchByCategory(category: string) {
+  async searchByCategory(category: string): Promise<Product[]> {
     const productsResult = await this.repository.searchByCategory(category);
 
     return productsResult;
