@@ -1,3 +1,4 @@
+import { Product } from "../../domain/entities/product";
 import { ProductRepositoryInterface } from "../../domain/repositories/product-repository-interface";
 import { ProductServiceInterface } from "../../domain/services/products-service-interface";
 
@@ -8,7 +9,7 @@ export class ProductService implements ProductServiceInterface {
     this.repository = productRepository;
   }
 
-  async loadProducts() {
+  async loadProducts(): Promise<Product[]> {
     const products = await this.repository.loadProducts();
     return products;
   }
