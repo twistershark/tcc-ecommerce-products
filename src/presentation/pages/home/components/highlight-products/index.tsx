@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ProductItem } from "../../../../components/product-item";
 import { Product } from "../../../../../domain/entities/product";
-import productsController from "../../../../../controllers/products-controller";
+import productsController from "../../../../controllers/products-controller";
 
 export function HighlightProducts() {
   const [highlightProducts, setHighlightProducts] = useState<Product[]>([]);
