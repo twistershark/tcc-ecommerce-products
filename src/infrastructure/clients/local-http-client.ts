@@ -2,10 +2,13 @@ import { PRODUCTS } from "../../constants/products";
 import { HttpClientInterface } from "./http-client-interface";
 
 export class LocalHttpClient<T> implements HttpClientInterface<T> {
-  async get(url: string): Promise<any> {
-    const searchParams = new URLSearchParams(url);
-    const name = searchParams.get("name");
-    const category = searchParams.get("category");
+  private baseURL = "http://localhost:3000";
+
+  async get(pathname: string): Promise<any> {
+    const url = new URL(pathname, this.baseURL);
+
+    const name = url.searchParams.get("name");
+    const category = url.searchParams.get("category");
 
     if (name) {
       return Promise.resolve(
