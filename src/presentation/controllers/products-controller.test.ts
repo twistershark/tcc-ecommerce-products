@@ -1,4 +1,4 @@
-import { ProductsServiceMock } from "../../application/services/tests/products-service-mock";
+import { ProductsServiceMock } from "../../application/services/mocks/products-service-mock";
 import { PRODUCTS } from "../../constants/products";
 import { Category } from "../../domain/entities/product";
 import { ProductsController } from "./products-controller";
