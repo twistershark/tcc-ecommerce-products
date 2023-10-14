@@ -6,13 +6,15 @@ import { ProductAdapter } from "../../infrastructure/adapters/product-adapter";
 import { LocalHttpClient } from "../../infrastructure/clients/local-http-client";
 import { ProductsRepository } from "../../infrastructure/repositories/products-repository";
 
-class ProductsController implements ProductsControllerInterface {
+export class ProductsController implements ProductsControllerInterface {
   private productsService: ProductServiceInterface;
 
-  constructor() {
-    this.productsService = new ProductService(
-      new ProductsRepository(new ProductAdapter(new LocalHttpClient()))
-    );
+  constructor(productsService?: ProductServiceInterface) {
+    this.productsService =
+      productsService ??
+      new ProductService(
+        new ProductsRepository(new ProductAdapter(new LocalHttpClient()))
+      );
   }
 
   async loadProducts(): Promise<Product[]> {
