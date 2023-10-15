@@ -11,7 +11,7 @@ export class ProductAdapter implements ProductAdapterInterface {
   constructor(httpClient: HttpClientInterface<Product[]>) {
     this.httpClient = httpClient;
   }
-  async get(params: ProductAdapterInterfaceGetParams): Promise<Product[]> {
+  async get(params?: ProductAdapterInterfaceGetParams): Promise<Product[]> {
     if (!params) {
       const data = await this.httpClient.get("/products");
       return data;

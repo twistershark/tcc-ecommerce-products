@@ -13,7 +13,7 @@ describe("ProductAdapter", () => {
 
   it("should be able to call the get method without params", async () => {
     const spy = jest.spyOn(productAdapter, "get");
-    const products = await productAdapter.get({});
+    const products = await productAdapter.get();
 
     expect(spy).toHaveBeenCalled();
     expect(products).toBeInstanceOf(Array<Product>);
