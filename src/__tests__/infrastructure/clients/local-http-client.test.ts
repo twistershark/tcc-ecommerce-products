@@ -1,6 +1,6 @@
-import { PRODUCTS } from "../../constants/products";
-import { Category } from "../../domain/entities/product";
-import { LocalHttpClient } from "./local-http-client";
+import { PRODUCTS } from "../../../constants/products";
+import { Category } from "../../../domain/entities/product";
+import { LocalHttpClient } from "../../../infrastructure/clients/local-http-client";
 
 describe("LocalHttpClient", () => {
   it("should be able to call the get method and receive the correct products response", () => {
