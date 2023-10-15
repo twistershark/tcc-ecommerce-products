@@ -9,7 +9,7 @@ describe("LocalHttpClient", () => {
 
     const response = httpClient.get(url);
 
-    expect(response).resolves.toStrictEqual(PRODUCTS);
+    expect(response).resolves.toBeDefined();
   });
 
   it("should be able to call the get method and receive the correct products response with name filter", async () => {

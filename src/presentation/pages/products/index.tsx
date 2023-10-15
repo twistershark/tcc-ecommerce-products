@@ -1,10 +1,8 @@
-import React from "react";
 import { useEffect, useState } from "react";
 
-import { Product } from "../../../domain/entities/product";
+import { Category, Product } from "../../../domain/entities/product";
 import { ProductItem } from "../../components/product-item";
-import productsController from "../../../controllers/products-controller";
-import { Category } from "../../../domain/entities/category";
+import productsController from "../../controllers/products-controller";
 
 export function Products() {
   const [products, setProducts] = useState([] as Product[]);
