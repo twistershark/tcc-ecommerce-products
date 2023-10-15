@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { Product } from "../../../domain/entities/product";
 
@@ -6,7 +5,7 @@ interface ProductItemProps {
   product: Product;
 }
 
-export function ProductItem({ product }: ProductItemProps) {
+export function ProductItem({ product }: Readonly<ProductItemProps>) {
   return (
     <Link to={`/produto/${product.id}`} key={product.id}>
       <div className="pl-group pl-relative pl-shadow-lg">

@@ -36,7 +36,7 @@ export function Products() {
 
       <div className="pl-mt-6 pl-grid pl-grid-cols-1 pl-gap-x-6 pl-gap-y-10 sm:pl-grid-cols-2 lg:pl-grid-cols-4 xl:pl-gap-x-8">
         {products.map((product) => (
-          <ProductItem product={product} />
+          <ProductItem key={product.id} product={product} />
         ))}
       </div>
     </div>

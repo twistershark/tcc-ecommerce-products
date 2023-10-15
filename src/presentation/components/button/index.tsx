@@ -1,4 +1,4 @@
-import React, { ComponentProps, ReactNode } from "react";
+import { ComponentProps, ReactNode } from "react";
 
 interface ButtonProps extends ComponentProps<"button"> {
   variant?: "full" | "outline";
@@ -11,7 +11,7 @@ export function Button({
   className,
   children,
   ...rest
-}: ButtonProps) {
+}: Readonly<ButtonProps>) {
   const commonStyles =
     "pl-w-full pl-h-[46px] text-sm pl-font-sans pl-font-semibold pl-transform pl-transition pl-duration-300 hover:pl-scale-105";
 

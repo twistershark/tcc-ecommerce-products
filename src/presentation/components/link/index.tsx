@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
 interface LinkProps {
@@ -6,7 +6,7 @@ interface LinkProps {
   children: ReactNode;
 }
 
-export function Link({ to, children }: LinkProps) {
+export function Link({ to, children }: Readonly<LinkProps>) {
   return (
     <RouterLink
       to={to}
