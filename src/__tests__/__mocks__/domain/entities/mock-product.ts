@@ -6,7 +6,7 @@ const categories = Object.keys(Category);
 export const mockCategory = (): Category =>
   faker.helpers.arrayElement(categories) as Category;
 
-function createRandomProduct(): Product {
+export function createRandomProduct(): Product {
   return {
     id: faker.string.uuid(),
     category: mockCategory(),
