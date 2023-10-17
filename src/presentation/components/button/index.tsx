@@ -1,4 +1,4 @@
-import { ComponentProps, ReactNode } from "react";
+import React, { ComponentProps, ReactNode } from "react";
 
 interface ButtonProps extends ComponentProps<"button"> {
   variant?: "full" | "outline";

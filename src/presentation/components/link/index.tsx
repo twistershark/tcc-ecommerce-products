@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
 interface LinkProps {
