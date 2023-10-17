@@ -1,4 +1,4 @@
-import { Product } from "../../domain/entities/product";
+import { Category, Product } from "../../domain/entities/product";
 import { ProductRepositoryInterface } from "../../domain/repositories/product-repository-interface";
 import { ProductServiceInterface } from "../../domain/services/products-service-interface";
 
@@ -37,7 +37,7 @@ export class ProductService implements ProductServiceInterface {
     return productsResult;
   }
 
-  async searchByCategory(category: string): Promise<Product[]> {
+  async searchByCategory(category: Category): Promise<Product[]> {
     const productsResult = await this.repository.searchByCategory(category);
 
     return productsResult;
