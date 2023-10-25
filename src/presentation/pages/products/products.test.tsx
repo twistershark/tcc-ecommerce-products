@@ -47,7 +47,8 @@ describe("ProductsPage", () => {
 
     expect(productsControllerSearchByNameSpy).toHaveBeenCalled();
 
-    await userEvent.type(input, "Bolsa");
+    await userEvent.type(input, "Camiseta{enter}");
+
 
     expect(productsControllerLoadProductsSpy).toHaveBeenCalled();
   });
