@@ -6,7 +6,9 @@ import { HighlightProducts } from "./components/highlight-products";
 import { Button } from "../../components/button";
 import { useNavigate } from "react-router-dom";
 
-export function Home() {
+import "tailwindcss/tailwind.css";
+
+export default function Home() {
   const navigate = useNavigate();
 
   return (
