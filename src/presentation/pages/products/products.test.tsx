@@ -1,10 +1,12 @@
 import "@testing-library/jest-dom";
 import { render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import { Products } from ".";
+import Products from ".";
 import { userEvent } from "@testing-library/user-event";
 import productsController from "../../controllers/products-controller";
 import { categoriesOptions } from "./constants/categories-options";
+
+jest.mock('tailwindcss/tailwind.css', () => '')
 
 describe("ProductsPage", () => {
   it("should render the component correctly", async () => {

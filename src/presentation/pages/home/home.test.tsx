@@ -1,9 +1,11 @@
 import "@testing-library/jest-dom";
 import { render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
-import { Home } from ".";
+import  Home from ".";
 import userEvent from "@testing-library/user-event";
-import { Products } from "../products";
+import Products from "../products";
+
+jest.mock('tailwindcss/tailwind.css', () => '')
 
 describe("Home", () => {
   it("should render the page correctly", async () => {

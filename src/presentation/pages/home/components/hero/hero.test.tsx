@@ -3,8 +3,10 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { HomeHero } from ".";
 import userEvent from "@testing-library/user-event";
-import { Home } from "../..";
-import { Products } from "../../../products";
+import Home from "../..";
+import Products from "../../../products";
+
+jest.mock('tailwindcss/tailwind.css', () => '')
 
 describe("Home", () => {
   it("should render the component correctly", () => {
