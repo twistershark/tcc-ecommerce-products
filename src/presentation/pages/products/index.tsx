@@ -6,7 +6,9 @@ import productsController from "../../controllers/products-controller";
 import { Button } from "../../components/button";
 import { categoriesOptions } from "./constants/categories-options";
 
-export function Products() {
+import "tailwindcss/tailwind.css";
+
+export default function Products() {
   const [products, setProducts] = useState([] as Product[]);
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(
     null
