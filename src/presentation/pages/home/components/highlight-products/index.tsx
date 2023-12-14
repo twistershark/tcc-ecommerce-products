@@ -17,7 +17,7 @@ export function HighlightProducts() {
   }, []);
 
   return (
-    <div>
+    <div className="pl-mx-auto pl-max-w-7xl sm:pl-px-6 sm:pl-py-24 lg:pl-max-w-7xl lg:pl-px-0 lg:pl-py-8">
       <h3 className="pl-text-black pl-font-serif pl-text-lg pl-font-bold pl-text-center">
         DESTAQUES
       </h3>

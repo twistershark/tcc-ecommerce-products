@@ -98,7 +98,7 @@ export default function Products() {
       <h3 className="pl-text-black pl-font-serif pl-text-lg pl-font-bold pl-text-center">
         PRODUTOS
       </h3>
-      <div className="pl-mt-6 pl-grid pl-grid-cols-1 pl-gap-x-6 pl-gap-y-10 sm:pl-grid-cols-2 lg:pl-grid-cols-4 xl:pl-gap-x-8">
+      <div className="pl-w-full pl-mt-6 pl-grid pl-grid-cols-1 pl-gap-x-6 pl-gap-y-10 sm:pl-grid-cols-2 lg:pl-grid-cols-4 xl:pl-gap-x-8">
         {products.length ? (
           products.map((product) => (
             <ProductItem key={product.id} product={product} />
