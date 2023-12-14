@@ -8,7 +8,7 @@ interface ProductItemProps {
 
 export function ProductItem({ product }: Readonly<ProductItemProps>) {
   return (
-    <Link to={`/produto/${product.id}`} key={product.id}>
+    <Link to={`/produto/${product.productId}`} key={product.id}>
       <div className="pl-group pl-relative pl-shadow-lg">
         <div className="pl-aspect-h-1 pl-aspect-w-1 pl-w-full overflow-hidden pl-rounded-md pl-bg-gray-200 pl-lg:aspect-none group-hover:pl-opacity-75 lg:pl-h-80">
           <img
